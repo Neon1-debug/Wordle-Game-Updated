@@ -1,10 +1,8 @@
 import random
 WORDS_POOL = ["АРБУЗ", "БАНАН", "ВЕТКА", "ГОРОД", "ДВЕРЬ", 
             "ЗЕБРА", "ИГРОК", "КАШКА", "ЛАМПА", "МАСКА", 
-            "НИТКА", "ОКЕАН", "ПАРУС",
-            "РЫБАК", "САПОГ", 
-            "ТУЧКА", "АКУЛА", 
-            "ФИНИК", "ШКОЛА", "БЛЮДО"]  
+            "НИТКА", "ОКЕАН", "ПАРУС","РЫБАК","САПОГ", 
+            "ТУЧКА", "АКУЛА", "ФИНИК", "ШКОЛА", "БЛЮДО"]  
 
 MARK_GREEN = "[√]"
 MARK_YELLOW = "[*]"
@@ -14,7 +12,7 @@ def secret_word(words_list):
     def decorator(func):
         def wrapper(*args, **kwargs):
             secret_word_value = random.choice(words_list)
-            return func(secret_word_value)
+            return func(secret_word_value, *args, **kwargs)
         return wrapper
     return decorator
 
