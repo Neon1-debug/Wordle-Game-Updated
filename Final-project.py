@@ -14,7 +14,7 @@ def secret_word(words_list):
     def decorator(func):
         def wrapper(*args, **kwargs):
             secret_word_value = random.choice(words_list)
-            return func(secret_word_value, *args, **kwargs)
+            return func(secret_word_value)
         return wrapper
     return decorator
 
